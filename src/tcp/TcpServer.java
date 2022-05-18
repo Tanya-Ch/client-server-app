@@ -1,21 +1,23 @@
+package tcp;
+
 import java.net.*;
 import java.io.*;
 
-public class Server{
+public class TcpServer {
     //initialize socket and input stream
     private Socket socket = null;
     private ServerSocket server = null;
     private DataInputStream in = null;
 
-    public Server(int port) {
+    public TcpServer(int port) {
         try {
             server = new ServerSocket(port);
-            System.out.println("Server started");
+            System.out.println("tcp.Server started");
 
             System.out.println("Waiting for a client ...");
 
             socket = server.accept();
-            System.out.println("Client accepted");
+            System.out.println("tcp.Client accepted");
 
             // takes input from the client socket
             in = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
@@ -40,6 +42,6 @@ public class Server{
     }
 
     public static void main(String args[]) {
-        Server server = new Server(5000);
+        TcpServer server = new TcpServer(5000);
     }
 }
