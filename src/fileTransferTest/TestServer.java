@@ -11,7 +11,7 @@ public class TestServer {
 
     public static void main(String[] args) throws IOException {
         JFrame jFrame = new JFrame("server");
-        jFrame.setSize(400,400);
+        jFrame.setSize(800,800);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JLabel jLabelText = new JLabel("Waiting for image from client...");
